@@ -11,7 +11,6 @@ int find_number;
 
 void binary(int start,int end,int find)
 {
-    start = -1;
     int mid = 0;
     while(start + 1 < end )
     {
@@ -40,7 +39,7 @@ int main()
     {
         scanf("%d",&find_number);
         flag = false;
-        binary(0,cnt,find_number);
+        binary(-1,cnt,find_number);
         if(flag == true) printf("1\n");
         else printf("0\n");
     }
