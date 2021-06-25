@@ -12,3 +12,4 @@
 6/20 -> 수찾기 기본 이진탐색 구현 연습 <br>
 6/21 -> ACM 호텔 문제 해결 (simulation) <br>
 6/24 -> (Stack) 제로 문제 구현 <br>
+6/25 -> (binaray search 응용) 숫자 카드 2 <br> 
