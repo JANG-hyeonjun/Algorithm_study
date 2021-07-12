@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/janghyeonjun/Desktop/Algorithm_study/boj_1018_chessBoard/main.cpp
+iostream
+-
+cstdio
+-
+queue
+-
+vector
+-
+algorithm
+-
+
