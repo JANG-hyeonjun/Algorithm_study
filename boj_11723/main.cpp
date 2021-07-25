@@ -8,11 +8,12 @@ using namespace std;
 string command;
 int temp;
 int * command_num = new int;
-vector <int> V_list;
-std::vector<int>::iterator it;
 
 struct Command
 {
+private:
+    vector <int> V_list;
+    std::vector<int>::iterator it;
 public:
     void add(int number);
     void remove(int number);
@@ -66,7 +67,9 @@ void Command::empty() {
 }
 int main() {
     ios_base::sync_with_stdio(0);
+    cin.tie(NULL);
     cin >> *command_num;
+    
     Command com;
 
     for(int i=0; i < *command_num; i++)
