@@ -33,8 +33,9 @@ void Command::remove(int number) {
     it = find(V_list.begin(),V_list.end(),number);
 
     if(it != V_list.end());
-        V_list.erase(std::remove(V_list.begin()))
+        V_list.erase(it);
 }
+
 
 
 
