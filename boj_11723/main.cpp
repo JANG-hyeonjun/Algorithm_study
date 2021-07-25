@@ -44,7 +44,15 @@ void Command::check(int number) {
     else
         cout << "0" << '\n';
 }
+void Command::toggle(int number) {
 
+}
+void Command::all() {
+
+}
+void Command::empty() {
+
+}
 
 int main() {
     ios_base::sync_with_stdio(0);
