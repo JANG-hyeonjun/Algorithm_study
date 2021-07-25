@@ -7,13 +7,12 @@ using namespace std;
 string command;
 int temp;
 int * command_num = new int;
-
+vector <int> V_list;
+std::vector<int>::iterator it;
 
 struct Command
 {
 public:
-    vector <int> V_list;
-    std::vector<int>::iterator it;
     void add(int number);
     void remove(int number);
     void check(int number);
