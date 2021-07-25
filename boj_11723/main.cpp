@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <cstdio>
 #include <cstring>
 
@@ -26,6 +27,7 @@ void Command::add(int number) {
         V_list.push_back(number);
         return;
     }
+
     it = find(V_list.begin(),V_list.end(),number);
 
     if(it == V_list.end())
