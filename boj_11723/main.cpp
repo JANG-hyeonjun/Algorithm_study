@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
-#include<cstring>
+#include <cstdio>
+#include <cstring>
 
 using namespace std;
 string command;
@@ -12,6 +13,7 @@ class Command
 {
 private:
     vector <int> V_list;
+    std::vector<int>::iterator it;
 public:
     void add(int number);
     void remove(int number);
@@ -22,11 +24,16 @@ public:
 };
 
 void Command::add(int number) {
-    
-    V_list.push_back(number);
+    it = find(V_list.begin(),V_list.end(),number);
+
+    if(it != V_list.end())
+        V_list.push_back(number);
 }
 void Command::remove(int number) {
+    it = find(V_list.begin(),V_list.end(),number);
 
+    if(it != V_list.end());
+        V_list.
 }
 
 
