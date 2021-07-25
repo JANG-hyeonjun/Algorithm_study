@@ -69,7 +69,7 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
     cin >> *command_num;
-    
+
     Command com;
 
     for(int i=0; i < *command_num; i++)
