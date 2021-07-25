@@ -9,13 +9,13 @@ int temp;
 int * command_num = new int;
 
 
-class Command
+struct Command
 {
 private:
     vector <int> V_list;
+    std::vector<int>::iterator it;
 
 public:
-    std::vector<int>::iterator it;
     void add(int number);
     void remove(int number);
     void check(int number);
