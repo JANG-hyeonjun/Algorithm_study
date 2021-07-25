@@ -24,6 +24,10 @@ public:
 };
 
 void Command::add(int number) {
+    if(V_list.size() == 0) {
+        V_list.push_back(number);
+        return;
+    }
     it = find(V_list.begin(),V_list.end(),number);
 
     if(it != V_list.end())
