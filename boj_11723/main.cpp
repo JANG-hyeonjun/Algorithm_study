@@ -30,7 +30,7 @@ void Command::add(int number) {
     }
     it = find(V_list.begin(),V_list.end(),number);
 
-    if(it != V_list.end())
+    if(it == V_list.end())
         V_list.push_back(number);
     else return;
 }
