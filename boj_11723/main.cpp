@@ -11,11 +11,9 @@ int * command_num = new int;
 
 struct Command
 {
-private:
+public:
     vector <int> V_list;
     std::vector<int>::iterator it;
-
-public:
     void add(int number);
     void remove(int number);
     void check(int number);
