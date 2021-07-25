@@ -31,8 +31,8 @@ void Command::add(int number) {
     it = find(V_list.begin(),V_list.end(),number);
 
     if(it != V_list.end())
-        return;
-    else V_list.push_back(number);
+        V_list.push_back(number);
+    else return;
 }
 void Command::remove(int number) {
     it = find(V_list.begin(),V_list.end(),number);
