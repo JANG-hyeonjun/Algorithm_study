@@ -57,10 +57,12 @@ void Command::toggle(int number) {
     else V_list.push_back(number);
 }
 void Command::all() {
-    
+    V_list.clear();
+    for(int i = 1; i <= 20; i++)
+        V_list.push_back(i);
 }
 void Command::empty() {
-
+     V_list.clear();
 }
 int main() {
     ios_base::sync_with_stdio(0);
