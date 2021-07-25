@@ -32,11 +32,18 @@ void Command::add(int number) {
 void Command::remove(int number) {
     it = find(V_list.begin(),V_list.end(),number);
 
-    if(it != V_list.end());
+    if(it != V_list.end())
         V_list.erase(it);
 }
 
+void Command::check(int number) {
+    it = find(V_list.begin(),V_list.end(),number);
 
+    if(it != V_list.end())
+        cout << "1" << '\n';
+    else
+        cout << "0" << '\n';
+}
 
 
 int main() {
