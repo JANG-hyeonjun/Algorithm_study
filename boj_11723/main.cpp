@@ -51,7 +51,10 @@ void Command::check(int number) {
         cout << "0" << '\n';
 }
 void Command::toggle(int number) {
-
+    it = find(V_list.begin(),V_list.end(),number);
+    if (it != V_list.end())
+        V_list.erase(it);
+    else V_list.push_back(number);
 }
 void Command::all() {
 
@@ -59,7 +62,6 @@ void Command::all() {
 void Command::empty() {
 
 }
-
 int main() {
     ios_base::sync_with_stdio(0);
     cin >> *command_num;
