@@ -39,6 +39,7 @@ void Command::remove(int number) {
 
     if(it != V_list.end())
         V_list.erase(it);
+    else return;
 }
 
 void Command::check(int number) {
