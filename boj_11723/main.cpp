@@ -57,7 +57,7 @@ void Command::toggle(int number) {
     else V_list.push_back(number);
 }
 void Command::all() {
-
+    
 }
 void Command::empty() {
 
