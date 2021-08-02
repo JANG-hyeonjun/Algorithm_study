@@ -1,19 +1,39 @@
 #include<iostream>
-
+#include<cstring>
 using namespace std;
 
-const int MAX = 130;
+const int MAX = 129;
 
 int map[MAX][MAX];
-int size;
-int result;
+int num_size;
 int white_paper;
 int blue_paper;
-int final_i,final_j;
 
-void caculate()
+void caculate(int x,int y,int n)
 {
-
+    int result = 0;
+    for (int i = x; i < x + n; i++)
+    {
+        for (int j = y; j < y + n; j++)
+        {
+            result += map[i][j];
+        }
+    }
+    if(result == n * n)
+    {
+        blue_paper++;
+    }
+    else if(result == 0)
+    {
+        white_paper++;
+    }
+    else{
+        caculate(x,y, n /2);
+        caculate(x, y + n /2 ,n / 2);
+        caculate(x + n /2, y, n / 2);
+        caculate(x + n /2, y + n /2, n / 2);
+    }
+    return;
 }
 
 int main()
@@ -22,11 +42,11 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    cin >> size;
-
-    for(int i =1; i <= size; i++)
+    cin >> num_size;
+    memset(map, 0, sizeof(map));
+    for(int i =0; i < num_size; i++)
     {
-        for(int j=1; j <= size; j++)
+        for(int j=0; j < num_size; j++)
             {
                 cin >> map[i][j];
             }
@@ -38,26 +58,8 @@ int main()
      그 범위 만큼 합을 계산해주는 함수를 짠다. 
      좌표를 주는 것을 계산해야한다. 
     */
-   int stride = size;
-    while(size != 1)
-    {
-        for(int i=1; i < size;)
-        {
-            for(int j = 1; j < size;)
-            {
-                cout << i << ", " << j << endl;
-                final_i = i + stride-1;
-                final_j = j + stride-1;
-                cout << final_i << ", " << final_j << endl;
-                j = j + stride - 1;
-                //caculate(i,j,stride);
-            }
-            i = i +stride - 1;
-        }
-        stride /= 2;
-    }
+   caculate(0,0,num_size);
     
-    //printf("hello\n");
-
+    cout << white_paper << endl << blue_paper << endl;
     return 0;
 }
