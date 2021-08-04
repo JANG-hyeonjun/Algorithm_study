@@ -5,11 +5,9 @@
 
 using namespace std;
 
-priority_queue<int,vector<int>> pq;
-
 class doubleEndedQueue{
 public:
-    set <int> s;
+    multiset <int> s;
     int size();
     string is_empty();
     void insert(int x);
@@ -17,6 +15,7 @@ public:
     int get_end();
     void delete_start();
     void delete_end();
+    void clear();
 };
 
 int doubleEndedQueue::size() {
@@ -32,8 +31,12 @@ int doubleEndedQueue::get_start() {
     return * (s.begin());
 }
 int doubleEndedQueue::get_end() {
-    return * (s.end());
+    return * (s.rbegin());
 }
+void doubleEndedQueue::clear() {
+    s.clear();
+}
+
 void doubleEndedQueue::delete_start() {
     if(s.size() == 0){
         return;
@@ -56,8 +59,12 @@ int main() {
     cin >> Test_case;
     for(int i =0; i < Test_case; i++)
     {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
         int command;
         cin >> command;
+        dq.clear();
         for(int j =0; j < command; j++)
         {
             string temp;
@@ -74,22 +81,20 @@ int main() {
                 cin >> temp;
                 if(temp == 1)
                 {
-                    dq.delete_start();
+                    dq.delete_end();
                 }
                 else{
-                    dq.delete_end();
+                    dq.delete_start();
                 }
             }
         }
         if(dq.is_empty() == "True"){
-            
+            cout << "EMPTY" << '\n';
         }
         else{
-
+            cout << dq.get_end() << " " << dq.get_start() << '\n';
         }
 
     }
-
-
     return 0;
 }
