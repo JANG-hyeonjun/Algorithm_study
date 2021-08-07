@@ -1,9 +1,9 @@
 #include <iostream>
-
+#include <algorithm>
 using namespace std;
 
 int N,M;
-
+bool check[10];
 
 void printArray(int arr[], int count)    // 배열의 포인터와 요소의 개수를 받음
 {
@@ -11,26 +11,37 @@ void printArray(int arr[], int count)    // 배열의 포인터와 요소의 개
     {
         printf("%d ", arr[i]);
     }
-
     printf("\n");
 }
 
-void combination(int depth,int next,int cArr[])
+void permutation(int depth,int cArr[],int NumArr[])
 {
     if(depth == M){
         printArray(cArr,M);
         return;
     }
-    for(int i = next; i <= N; i++)
+    for(int i = 0; i < N; i++)
     {
-        cArr[depth] = i;
-        combination(depth + 1, i+ 1,cArr);
+        if(!check[i]){
+            check[i] = true;
+            cArr[depth] = NumArr[i];
+            permutation(depth + 1,cArr,NumArr);
+            check[i] = false;
+        }
     }
 }
 
 int main() {
     cin >> N >> M;
     int cArr[M];
-    combination(0,1,cArr);
+    int NumArr[N];
+    for(int i =0; i < N; i++)
+    {
+        int number;
+        cin >> number;
+        NumArr[i] = number;
+    }
+    sort(NumArr,NumArr+N);
+    permutation(0,cArr,NumArr);
     return 0;
 }
