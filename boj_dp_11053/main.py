@@ -7,7 +7,7 @@
 import sys
 
 input = sys.stdin.readline
-
+#만약 문자열을 저장하고 싶을 경우 .rstrip()을 추가해라
 seq_size = int(input())
 sequence = list(map(int,input().split()))
 
