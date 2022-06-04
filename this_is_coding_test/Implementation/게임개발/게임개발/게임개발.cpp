@@ -117,6 +117,7 @@ int main()
 	std::cin >> cur_y >> cur_x >> direction;
 	Game* game = new Game(r, c,direction);
 	game->setPos(cur_y, cur_x);
+	
 	for (int i = 0; i < r; ++i)
 	{
 		for (int j = 0; j < c; ++j)
