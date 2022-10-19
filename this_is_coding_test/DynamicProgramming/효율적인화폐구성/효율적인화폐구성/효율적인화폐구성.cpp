@@ -4,8 +4,6 @@
 #include <iostream>
 #include <array>
 #include <vector>
-
-
 int main()
 {
 	int N = 0, M = 0;
